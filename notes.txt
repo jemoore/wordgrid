@@ -1,0 +1,29 @@
+Given an NxN grid of letters find words.  Word search puzzle solver.
+what about a NxM gird?
+
+Several approaches:
+
+1. Brute force.
+Start at upper left of grid (0,0) read the letter, search the dictionary for a 
+match.  If match not found add the next letter to the right, search the dictionary
+for a match.  Continue until end of row.  Start again at (0,0) and add letters 
+going down... repeat diagonally.  Would also have to consider words that are 
+backwards.
+
+This would be the slowest way.
+What is the complexity?....
+
+2. search grid
+for each word in dictionary
+A. search row n
+B. if not found reverse the letters in row n and search again
+C. if not found and next row goto next row and return to A.
+if word not found
+D. search column c
+E. if not found reverse the letters in column c and sarch again
+F. if not found and next column goto next column and return to D.
+if word not found
+G. search diagonal d
+H. if not found reverse the letters in d and search again
+I. if not found and next diagonal goto next diagonal and return to G.
+if word not found ERROR!!!
